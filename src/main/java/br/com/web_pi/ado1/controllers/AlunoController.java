@@ -1,26 +1,33 @@
 package br.com.web_pi.ado1.controllers;
 
+import java.util.LinkedHashMap;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import br.com.web_pi.ado1.models.Aluno;
 import br.com.web_pi.ado1.records.AlunoRecord;
 import br.com.web_pi.ado1.services.AlunoService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
-import org.springframework.beans.BeanUtils;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.LinkedHashMap;
 
 @RestController
 @RequestMapping("/aluno")
 @CrossOrigin(origins = "*")
 public class AlunoController {
     
-    private final AlunoService service;
-
-    public AlunoController(AlunoService service) {
-        this.service = service;
-    }
+    @Autowired
+    private AlunoService service;
 
     @GetMapping("/listar")
     public ResponseEntity<?> getAll() {
@@ -48,7 +55,7 @@ public class AlunoController {
 
     @PostMapping
     public ResponseEntity<?> post(@Valid @RequestBody AlunoRecord record) {
-        Aluno aluno;
+        Aluno aluno = null;
         try {
             aluno = new Aluno();
             BeanUtils.copyProperties(record, aluno);

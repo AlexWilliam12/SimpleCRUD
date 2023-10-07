@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Documentation</title>
+</head>
+<body>
+    <h1>Documentação para utilizar a API</h1>
+    <hr>
+    <h2>Método GET para listar todos os alunos: <a href="http://127.0.0.1:8080/aluno/listar">http://127.0.0.1:8080/aluno/listar</a></h2>
+    <hr>
+    <h2>Método GET para listar um aluno pelo RA: <a href="http://127.0.0.1:8080/aluno/{ra}">http://127.0.0.1:8080/aluno/{ra}</a></h2>
+    <strong>É necessário passar um código no lugar de {ra}
+        <pre>
+            Ex: http://127.0.0.1:8080/aluno/5c10a6796f
+        </pre>
+    </strong>
+    <hr>
+    <h2>Método POST para cadastrar um aluno: <a href="http://127.0.0.1:8080/aluno">http://127.0.0.1:8080/aluno</a></h2>
+    <strong>É necessário passar um JSON no body
+        <pre>
+            Ex:
+                {
+                    "nome" : "Fulano da Silva",
+                    "cep" : "01001000",
+                    "numero" : 100,
+                    "complemento" : "Casa",
+                    "notaAdo1" : 8.75,
+                    "notaPi" : 7.25
+                }
+        </pre>
+    </strong>
+    <hr>
+    <h2>Método PUT para atualizar um aluno: <a href="http://127.0.0.1:8080/aluno/{ra}">http://127.0.0.1:8080/aluno/{ra}</a></h2>
+    <strong>É necessário passar um JSON no body e também um código no lugar de {ra}
+        <pre>
+            Ex:
+                http://127.0.0.1:8080/aluno/5c10a6796f
+                {
+                    "nome" : "Fulano da Silva",
+                    "cep" : "01001000",
+                    "numero" : 100,
+                    "complemento" : "Casa",
+                    "notaAdo1" : 8.75,
+                    "notaPi" : 7.25
+                }
+        </pre>
+    </strong>
+    <hr>
+    <h2>Método DELETE para excluir um aluno: <a href="http://127.0.0.1:8080/aluno/{ra}">http://127.0.0.1:8080/aluno/{ra}</a></h2>
+    <strong>É necessário passar um código no lugar de {ra}
+        <pre>
+            Ex:
+                http://127.0.0.1:8080/aluno/5c10a6796f
+        </pre>
+    </strong>
+</body>
+</html>

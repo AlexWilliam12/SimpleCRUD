@@ -1,8 +1,5 @@
 package br.com.web_pi.ado1.utils;
 
-import br.com.web_pi.ado1.models.Endereco;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -10,6 +7,10 @@ import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.UUID;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.web_pi.ado1.models.Endereco;
 
 public class AlunoUtils {
     public static String generatedRa() {
